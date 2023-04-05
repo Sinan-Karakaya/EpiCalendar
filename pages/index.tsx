@@ -60,7 +60,7 @@ export default function Home() {
         </div>
         <div className={styles.footer}>
           <Text h5>Want to understand what this website is for? &nbsp;
-            <Link href="#" isExternal>Click here</Link>
+            <Link href="https://github.com/Sinan-Karakaya/EpiCalendar" isExternal>Click here</Link>
           </Text >
         </div>
       </main>
