@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import { Input, Button, Link, Text, Loading } from '@nextui-org/react'
+import { Input, Button, Link, Text, Loading, Image } from '@nextui-org/react'
 
 export default function Home() {
   const [loading, setLoading] = useState(false)
@@ -44,26 +44,32 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.center}>
-          <Text h1>Please submit your email to get your iCal file</Text>
-          <form className={styles.form} onSubmit={submitEmail}>
-            <Input labelPlaceholder="Email" type='email' size={'xl'} />
-            <Button type="submit" auto bordered size={"lg"}>
-              {loading ? <Loading type="points"/> : 'Submit'}
-            </Button>
-          </form>
-          {success === false ?
-          (<Text h5 color="error">Something went wrong, please try again later</Text>) :
-          success === true ? (<Text h5 color="success">Your calendar is ready, the download should have started</Text>)
-          : null}
-        </div>
-        <div className={styles.footer}>
-          <Text h5>Want to understand what this website is for? &nbsp;
-            <Link href="https://github.com/Sinan-Karakaya/EpiCalendar" isExternal>Click here</Link>
-          </Text >
-        </div>
-      </main>
+      <>
+        <main className={styles.main}>
+          <div className={styles.center}>
+            <Text h1>Please submit your email to get your iCal file</Text>
+            <form className={styles.form} onSubmit={submitEmail}>
+              <Input labelPlaceholder="Email" type='email' size={'xl'} />
+              <Button type="submit" auto bordered size={"lg"}>
+                {loading ? <Loading type="points"/> : 'Submit'}
+              </Button>
+            </form>
+            {success === false ?
+            (<Text h5 color="error">Something went wrong, please try again later</Text>) :
+            success === true ? (<Text h5 color="success">Your calendar is ready, the download should have started</Text>)
+            : null}
+          </div>
+          <div>
+            <Text h5>Want to know how to use this website? &nbsp;
+              <Link href="https://github.com/Sinan-Karakaya/EpiCalendar" isExternal>Click here</Link>
+            </Text >
+            {/* <Image src="down-arrow.png" width={50} height={50} className={styles.triangle} /> */}
+          </div>
+        </main>
+        {/* <div className={styles.center}>
+          <Text h5>Coucou le tuto</Text>
+        </div> */}
+      </>
     </>
   )
 }

@@ -288,3 +288,7 @@
     transform: rotate(0deg);
   }
 }
+
+.triangle {
+  filter: invert(1);
+}
